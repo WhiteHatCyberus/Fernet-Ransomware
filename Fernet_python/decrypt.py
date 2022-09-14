@@ -1,4 +1,8 @@
-﻿import os
+# the decryption file
+import os
+import subprocess
+import time
+subprocess.run(["python", "-m", "pip", "install", "cryptography"])
 from cryptography.fernet import Fernet
 #Disclaimer: For educational use  only
 files = []
@@ -16,6 +20,8 @@ for file in files:
 	contents_decrypted = Fernet(secretkey).decrypt(contents)
 	with open(file, "wb") as thefile:
 		thefile.write(contents_decrypted)
+print("DECRYPTION SUCCESSFUL \n")
 print("You have successfully decrypted your files")
 print("\n This has been made for educational purposes only by WhiteHatCyberus")
 print("\n Cyberus does not entertain malicious use of its applications")
+time.sleep(5)
